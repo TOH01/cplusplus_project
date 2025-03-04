@@ -8,9 +8,11 @@ class Snake {
     public:
         enum class Direction { Up, Down, Left, Right};
         Snake(Grid & grid);
-        void grow();
         void setDirection(Direction newDirection);
         void move();
+        bool getGameOverStatus();
+        void reset();
+        int getScore();
     private:
         Grid& grid;
         
@@ -18,6 +20,7 @@ class Snake {
 
         Direction currentDirection;
 
+        bool gameOver;
         bool hasEaten;
-        bool gameOver(Position newHead);
+        bool isGameOver(Position newHead);
 };

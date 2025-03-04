@@ -27,8 +27,6 @@ Grid::Grid(int size){
 
 void Grid::draw(sf::RenderWindow & window){
     
-    window.clear();  
-
     for (int y = 0; y < currentSize; y++)
     {
         for (int x = 0; x < currentSize; x++)
@@ -49,7 +47,12 @@ void Grid::draw(sf::RenderWindow & window){
 }
 
 void Grid::updateCell(Position position, Cell::Type newType){
-    grid[position.x][position.y].setType(newType);
+    
+    //check prevents game from crashing if snake somehow goes over border tile
+    
+    if (position.x >= 0 && position.x < currentSize && position.y >= 0 && position.y < currentSize) {
+        grid[position.x][position.y].setType(newType);
+    }
 }
 
 int Grid::getSize(){
