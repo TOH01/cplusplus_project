@@ -16,7 +16,7 @@ int main() {
     int score = 0;
 
     sf::Font font;
-    if (!font.openFromFile("assets/Roboto_Condensed-Black.ttf")) {
+    if (!font.openFromFile("../assets/Roboto_Condensed-Black.ttf")) {
         std::cerr << "Error loading font!" << std::endl;
     }
 

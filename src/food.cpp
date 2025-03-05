@@ -7,7 +7,7 @@ Food::Food(Grid& grid) : grid(grid), position({-1, -1}){
 
     reset();
 
-    if (!buffer.loadFromFile("assets/echo_pop.wav")){
+    if (!buffer.loadFromFile("../assets/echo_pop.wav")){
         std::cerr << "Couldnt load echo_pop.wav" << std::endl;
     }
 
